@@ -1,0 +1,73 @@
+# ============================================================
+# GNS3 Enterprise Lab — .gitignore
+# Rule: only commit YOUR work. Never commit auto-generated files.
+# ============================================================
+
+# ────────────────────────────────────────
+# GNS3 AUTO-GENERATED — never commit these
+# ────────────────────────────────────────
+
+# Default base configs (GNS3 installs these automatically)
+configs/ios_base_startup-config.txt
+configs/ios_etherswitch_startup-config.txt
+configs/iou_l2_base_startup-config.txt
+configs/iou_l3_base_startup-config.txt
+configs/vpcs_base_config.txt
+
+# Built-in symbols (downloaded automatically by GNS3)
+symbols/
+
+# Empty disk images (auto-created by GNS3 at startup)
+images/QEMU/empty*.qcow2
+images/QEMU/config.img
+
+# OVMF firmware (system files, not yours)
+images/QEMU/*.fd
+
+# Appliances cache (auto-synced by GNS3)
+appliances/
+
+# ────────────────────────────────────────
+# IOS / VM IMAGES — legal + size reasons
+# ────────────────────────────────────────
+images/QEMU/*.qcow2
+images/QEMU/*.vmdk
+images/QEMU/*.img
+images/IOS/*.bin
+images/IOU/*.bin
+
+# ────────────────────────────────────────
+# GNS3 RUNTIME FILES — machine-specific
+# ────────────────────────────────────────
+
+# Dynamips JIT binary cache (rebuilt on each machine)
+project-files/dynamips/ilt_*
+project-files/dynamips/*.txt
+
+# VPCS runtime logs
+project-files/vpcs/*/vpcs.log
+
+# GNS3 server runtime
+*.log
+*.pid
+*.db
+
+# GNS3 server config (contains your JWT secret — never commit)
+gns3_server.conf
+
+# ────────────────────────────────────────
+# PYTHON
+# ────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# ────────────────────────────────────────
+# SYSTEM
+# ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
